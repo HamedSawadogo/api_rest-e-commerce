@@ -19,7 +19,7 @@ class Database
     }
   }
   // getter pour la connexion
-  public static function getConnection()
+  public static function getConnection(): ?PDO
   {
     if (self::$connexion == null) {
       new Database();
@@ -27,5 +27,3 @@ class Database
     return self::$connexion;
   }
 }
-
-$db = Database::getConnection();

@@ -9,11 +9,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 // suivant la methode du client
 switch ($_SERVER['REQUEST_METHOD']) {
   case 'POST':
-    // On instancie la base de données
-    $database = new Database();
-    $db = $database->getConnection();
-    // On instancie les produits
-    // On récupère les informations envoyées
+    $db = Database::getConnection();
     $donnees = json_decode(file_get_contents("php://input"));
     break;
   case 'GET':
