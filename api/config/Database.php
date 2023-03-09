@@ -14,7 +14,6 @@ class Database
     try {
       self::$connexion = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
       self::$connexion->exec("set names utf8");
-      echo "connection reussi!";
     } catch (PDOException $exception) {
       echo "Erreur de connexion : " . $exception->getMessage();
     }
